@@ -13,3 +13,4 @@ pandas
 python-docx
 streamlit_option_menu
 groq
+langChain-openai
