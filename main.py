@@ -1,9 +1,8 @@
 import streamlit as st
 
 from langchain_openai import ChatOpenAI
-chat_model = ChatOpenAI()
-
 from database import create_new_chat
+chat_model = ChatOpenAI()
 
 st.set_page_config(page_title="Hansung-GPT", page_icon="https://pbs.twimg.com/profile_images/1212031261297930241/p6kIo01N_400x400.jpg", layout="centered")
 st.title("Hansung-GPT")
