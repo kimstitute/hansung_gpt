@@ -1,4 +1,4 @@
-import streamlit as st
+'''import streamlit as st
 
 from langchain_openai import ChatOpenAI
 chat_model = ChatOpenAI()
@@ -20,3 +20,4 @@ if st.button("시 작성"):
 
 #if __name__ == "__main__":
 #    main()
+'''
