@@ -15,8 +15,8 @@ if st.button("시 작성"):
         st.write(result.content)
 
 # 메인 함수
-def main():
+#def main():
 
 
-if __name__ == "__main__":
-    main()
+#if __name__ == "__main__":
+#    main()
