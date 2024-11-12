@@ -1,7 +1,7 @@
 import streamlit as st
 
 from langchain_openai import ChatOpenAI
-#from database import create_new_chat
+from database import create_new_chat
 chat_model = ChatOpenAI()
 
 st.set_page_config(page_title="Hansung-GPT", page_icon="https://pbs.twimg.com/profile_images/1212031261297930241/p6kIo01N_400x400.jpg", layout="centered")
@@ -22,31 +22,7 @@ AVAILABLE_MODELS = [
     "gpt-4",
     "gpt-3.5-turbo-0125",
 ]
-########################################
-# firebase, firestore 관련 소스 코드(분리 예정)
-import firebase_admin
-from firebase_admin import credentials, firestore, storage
 
-# Firebase 서비스 계정 키
-cred = credentials.Certificate("AIzaSyC5iGjh0cK-GLkTcvChf7CST7BL2CfnqVk")
-
-# Firebase 초기화 (Storage 버킷 이름 포함)
-firebase_admin.initialize_app(cred, {
-    'storageBucket': 'hs-gpt-b4da9.appspot.com'  # Firebase Storage 버킷 이름 설정
-})
-
-# Firestore 클라이언트 초기화
-db = firestore.client()
-
-# Firebase Storage 사용을 위한 bucket 초기화
-bucket = storage.bucket()  # Firebase Storage 기본 버킷을 가져오기
-
-# 새로운 채팅 만드는 함수
-def create_new_chat(user_id):
-    chat_ref = db.collection("users").document(user_id).collection("chats").document()
-    chat_ref.set({"created_at": firestore.SERVER_TIMESTAMP})
-    return chat_ref.id
-########################################
 # 메인 함수
 def main():
     with st.sidebar:
